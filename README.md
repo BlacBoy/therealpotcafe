@@ -84,22 +84,6 @@ the-real-pot-cafe/
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-No Node.js, npm, database, framework, or build tools are required.
-
-You only need:
-
-* A modern web browser
-* A code editor such as Visual Studio Code
-* Git, if cloning the repository
-
----
-
----
-
 # 🍲 Managing the Menu
 
 All menu items are stored inside:
@@ -259,49 +243,6 @@ The website uses two Google Fonts:
 * **Playfair Display** — headings and decorative typography
 * **Nunito** — body text and interface elements
 
-They are loaded in `index.html`:
-
-```html
-<link
-  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600&display=swap"
-  rel="stylesheet"
->
-```
-
-An internet connection is required for the Google Fonts to load.
-
----
-
-# 🔗 Production Links
-
-Before deploying the website, replace placeholder links such as:
-
-```html
-href="#"
-```
-
-with the appropriate production URLs.
-
-Important links to configure include:
-
-* WhatsApp ordering number
-* Full menu PDF
-* Restaurant location
-* Google Maps location
-* Restaurant email
-* Parent-company website
-* Social-media profiles
-
-You can search the repository for:
-
-```text
-href="#"
-```
-
-to identify remaining placeholder links.
-
----
-
 # 🌐 Deployment
 
 Because this project is a static website, it can be deployed without a backend server.
@@ -316,78 +257,6 @@ Supported deployment options include:
 * Apache
 * Nginx
 * Any static web server
-
----
-
-## GitHub Pages
-
-To deploy using GitHub Pages:
-
-1. Push the project to GitHub.
-2. Open the repository.
-3. Go to **Settings**.
-4. Select **Pages**.
-5. Under **Build and deployment**, select the desired branch.
-6. Select the root directory if prompted.
-7. Save the configuration.
-8. GitHub will generate the website URL.
-
-The project does not require a build command.
-
----
-
-# 📋 Production Checklist
-
-Before launching the website:
-
-### Business Information
-
-* [ ] Verify restaurant name.
-* [ ] Verify restaurant description.
-* [ ] Verify parent-company information.
-* [ ] Verify opening hours.
-* [ ] Verify restaurant email address.
-* [ ] Add the correct restaurant location.
-
-### Menu
-
-* [ ] Verify all menu categories.
-* [ ] Verify menu item names.
-* [ ] Verify descriptions.
-* [ ] Verify prices.
-* [ ] Confirm that prices are current.
-* [ ] Add the final downloadable menu PDF.
-
-### Ordering
-
-* [ ] Replace the placeholder WhatsApp number.
-* [ ] Test adding menu items.
-* [ ] Test WhatsApp order generation.
-* [ ] Test WhatsApp ordering on mobile.
-* [ ] Test WhatsApp ordering on desktop.
-* [ ] Confirm the generated order message is correct.
-
-### Links
-
-* [ ] Replace all `href="#"` placeholders.
-* [ ] Add Google Maps location.
-* [ ] Verify parent-company links.
-* [ ] Verify email links.
-* [ ] Add social-media links if applicable.
-
-### Website
-
-* [ ] Add restaurant photography.
-* [ ] Add a favicon.
-* [ ] Add SEO metadata.
-* [ ] Add Open Graph metadata.
-* [ ] Test responsive layouts.
-* [ ] Test navigation.
-* [ ] Test all menu tabs.
-* [ ] Test all buttons.
-* [ ] Test major browsers.
-* [ ] Enable HTTPS.
-* [ ] Connect the production domain.
 
 ---
 
@@ -443,24 +312,6 @@ Recommended browsers:
 
 ---
 
-# ♿ Accessibility
-
-When expanding the website, maintain accessibility best practices.
-
-Recommended practices include:
-
-* Use semantic HTML.
-* Maintain sufficient colour contrast.
-* Ensure buttons and links are keyboard accessible.
-* Provide descriptive `alt` text for images.
-* Avoid communicating important information using colour alone.
-* Maintain visible focus states.
-* Use meaningful link text.
-* Test keyboard navigation.
-* Test with screen readers where practical.
-
----
-
 # 🔍 SEO
 
 The current project contains basic HTML metadata, but the production website should be enhanced with:
@@ -472,26 +323,6 @@ The current project contains basic HTML metadata, but the production website sho
 * Restaurant structured data
 * Location information
 * Relevant Nigerian cuisine keywords
-
-A future implementation could use `schema.org` structured data for the restaurant.
-
-For example, the site could eventually include structured data using the `Restaurant` schema.
-
----
-
-# 🔒 Security Considerations
-
-The current website is a static frontend and does not contain a backend or database.
-
-For production:
-
-* Do not place API keys in `main.js`.
-* Do not store payment credentials in frontend JavaScript.
-* Use HTTPS.
-* Avoid collecting unnecessary customer information.
-* Validate all data server-side if a backend is introduced.
-* Secure any future APIs.
-* Keep third-party dependencies updated if dependencies are introduced.
 
 ---
 
