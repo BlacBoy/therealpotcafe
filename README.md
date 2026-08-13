@@ -1,136 +1,356 @@
-The Real Pot Café
+# The Real Pot Café
 
-A responsive restaurant website for The Real Pot Café, an authentic Nigerian cuisine brand. The site presents the restaurant's story, menu, opening hours, contact information, and a simple WhatsApp-based ordering flow.
+<p align="center">
+  <strong>Authentic Nigerian Cuisine</strong><br>
+  A modern, responsive restaurant website for The Real Pot Café.
+</p>
 
-Features
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#tech-stack">Tech Stack</a> •
+  <a href="#project-structure">Project Structure</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#configuration">Configuration</a> •
+  <a href="#deployment">Deployment</a>
+</p>
 
-Responsive layout for desktop, tablet, and mobile.
+---
 
-Fixed navigation bar with smooth scrolling.
+## 📖 About
 
-Hero section with restaurant branding and calls to action.
+**The Real Pot Café** is a responsive restaurant website designed to showcase authentic Nigerian cuisine and provide customers with a simple way to browse the menu and place orders through WhatsApp.
 
-Dynamic menu rendered from JavaScript data.
+The website is built with **HTML5, CSS3, and vanilla JavaScript**, making it lightweight, easy to maintain, and suitable for static hosting platforms such as GitHub Pages, Netlify, Vercel, Cloudflare Pages, or traditional web hosting.
 
-Menu categories/tabs:
+The Real Pot Café is presented as a subsidiary of **Opeyemi Ononuga General Enterprises**.
 
-Rice Dishes
+---
 
-Soups & Swallows
+## ✨ Features
 
-Protein
+* 📱 Fully responsive design for desktop, tablet, and mobile
+* 🍲 Dynamic menu generated from JavaScript data
+* 🗂️ Interactive menu categories
+* 🛒 Add-to-order functionality
+* 📲 WhatsApp-based ordering
+* 🔔 Order confirmation toast notifications
+* 🧭 Smooth scrolling navigation
+* 📌 Active navigation-section highlighting
+* ✨ Scroll-triggered fade-in animations
+* 🕐 Opening-hours section
+* 📖 Restaurant story/about section
+* 🔗 Parent-company integration
+* 🎨 Nigerian-inspired warm colour palette
+* ⚡ No frontend framework or build system required
+* 🌐 Suitable for static website hosting
 
-Drinks
+---
 
-Pastries
+## 🛠️ Tech Stack
 
-Add-to-order functionality.
+| Technology             | Purpose                                            |
+| ---------------------- | -------------------------------------------------- |
+| HTML5                  | Website structure and semantic markup              |
+| CSS3                   | Layout, responsive design, animations, and styling |
+| JavaScript ES6+        | Dynamic menu and interactive functionality         |
+| Google Fonts           | Playfair Display and Nunito typography             |
+| WhatsApp Click-to-Chat | Customer ordering                                  |
 
-WhatsApp order generation with selected menu items.
+---
 
-Toast notifications when items are added to an order.
+## 📁 Project Structure
 
-Scroll-based navigation highlighting.
-
-Fade-in animations for feature and opening-hours cards.
-
-Opening-hours section.
-
-Restaurant story/about section.
-
-Parent-company links for Opeyemi Ononuga General Enterprises.
-
-Responsive mobile styling.
-
-Project Structure
-
+```text
 the-real-pot-cafe/
+│
 ├── index.html
 ├── README.md
+│
 ├── css/
 │   └── style.css
+│
 └── js/
     └── main.js
+```
 
-Getting Started
+### File Description
 
-No build tools or frameworks are required.
+| File            | Description                                                                |
+| --------------- | -------------------------------------------------------------------------- |
+| `index.html`    | Main website page and page structure                                       |
+| `css/style.css` | Complete website styling and responsive layout                             |
+| `js/main.js`    | Menu data, menu rendering, WhatsApp ordering, animations, and interactions |
+| `README.md`     | Project documentation                                                      |
 
-1. Download or clone the project
+---
 
-Place the files in the structure shown above.
+## 🚀 Getting Started
 
-2. Open the website
+### Prerequisites
 
-Open index.html directly in a modern web browser.
+No Node.js, npm, database, framework, or build tools are required.
 
-For development, you can also use a local development server such as VS Code Live Server.
+You only need:
 
-Configuration
+* A modern web browser
+* A code editor such as Visual Studio Code
+* Git, if cloning the repository
 
-WhatsApp Order Number
+---
 
-Before going live, update the placeholder WhatsApp number in js/main.js:
+### Clone the Repository
 
+```bash
+git clone https://github.com/YOUR-USERNAME/the-real-pot-cafe.git
+```
+
+Navigate into the project:
+
+```bash
+cd the-real-pot-cafe
+```
+
+> Replace `YOUR-USERNAME` and the repository name with the actual GitHub repository details.
+
+---
+
+## 💻 Running the Website Locally
+
+### Option 1 — Open Directly
+
+Open:
+
+```text
+index.html
+```
+
+in a modern browser.
+
+This works because the project is a static website.
+
+---
+
+### Option 2 — VS Code Live Server
+
+If you use Visual Studio Code, install the **Live Server** extension.
+
+Then:
+
+1. Open the project in VS Code.
+2. Right-click `index.html`.
+3. Select **Open with Live Server**.
+
+The website will open at a local URL similar to:
+
+```text
+http://127.0.0.1:5500/
+```
+
+---
+
+### Option 3 — Python HTTP Server
+
+If Python is installed:
+
+```bash
+python -m http.server 8000
+```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+---
+
+# ⚙️ Configuration
+
+## 📲 Configure WhatsApp Ordering
+
+The WhatsApp number is configured in:
+
+```text
+js/main.js
+```
+
+Find:
+
+```javascript
 const WHATSAPP_NUMBER = '234XXXXXXXXXX';
+```
 
-Use the full international number without +, spaces, or dashes.
+Replace it with the restaurant's actual WhatsApp number.
 
 For example:
 
+```javascript
 const WHATSAPP_NUMBER = '2348012345678';
+```
 
-The website will automatically generate a WhatsApp URL containing the customer's selected items.
+The number must use international format.
 
-Updating the Menu
+### Correct
 
-All menu items are stored in the menuData object inside js/main.js.
+```text
+2348012345678
+```
 
-Each item contains:
+### Incorrect
 
+```text
++234 801 234 5678
+```
+
+Do not include:
+
+* `+`
+* spaces
+* hyphens
+* brackets
+
+The website generates WhatsApp URLs using:
+
+```text
+https://wa.me/NUMBER
+```
+
+---
+
+# 🍲 Managing the Menu
+
+All menu items are stored inside:
+
+```text
+js/main.js
+```
+
+The main data structure is:
+
+```javascript
+const menuData = {
+  'Rice Dishes': [
+    {
+      name: 'Smoky Jollof Rice',
+      desc: 'Party-style jollof with that signature smoky bottom',
+      price: '₦2,000'
+    }
+  ]
+};
+```
+
+Each menu item contains:
+
+| Property | Description       |
+| -------- | ----------------- |
+| `name`   | Name of the dish  |
+| `desc`   | Short description |
+| `price`  | Display price     |
+
+---
+
+## Adding a Menu Item
+
+For example:
+
+```javascript
 {
-  name: 'Smoky Jollof Rice',
-  desc: 'Party-style jollof with that signature smoky bottom',
-  price: '₦2,000'
+  name: 'Fried Rice',
+  desc: 'Fragrant Nigerian fried rice with vegetables and seasoning',
+  price: '₦2,500'
 }
+```
 
-To add a new item, add another object to the appropriate category.
+Add it to the appropriate category.
 
-To create a new category, add another key to menuData:
+---
 
-'New Category': [
+## Adding a New Category
+
+Create another category inside `menuData`:
+
+```javascript
+'Breakfast': [
   {
-    name: 'New Dish',
-    desc: 'Description of the dish',
-    price: '₦2,500'
+    name: 'Akara & Pap',
+    desc: 'Fresh akara served with smooth Nigerian pap',
+    price: '₦2,000'
   }
 ]
+```
 
-The menu tab is created automatically from the category name.
+The website automatically generates the corresponding menu tab.
 
-WhatsApp Ordering
+No changes to the HTML are required.
 
-Customers can select menu items using the + Add buttons.
+---
 
-The selected items are stored temporarily in the browser and used to build a WhatsApp message such as:
+# 🛒 How Ordering Works
 
+Customers can browse the menu and click:
+
+```text
++ Add
+```
+
+on any menu item.
+
+The selected items are stored temporarily in the browser:
+
+```javascript
+let orderItems = [];
+```
+
+The website then creates a WhatsApp message containing the selected items.
+
+For example:
+
+```text
 Hi, I'd like to order:
 
 • Smoky Jollof Rice (₦2,000)
 • Asun (₦4,000)
+• Coke (PET) (₦800)
 
 Please confirm availability and delivery details. Thank you!
+```
 
-The order is not stored on a server. It is simply converted into a WhatsApp message and opened using the customer's device/browser.
+The customer can then send the order directly through WhatsApp.
 
-Styling
+---
 
-The main styles are contained in:
+## ⚠️ Current Ordering Limitations
 
+The current ordering system is intentionally lightweight.
+
+It does **not** currently include:
+
+* Online payment processing
+* Customer accounts
+* Order history
+* Server-side order storage
+* Inventory management
+* Delivery tracking
+* Customer database
+* Restaurant administration dashboard
+* Automatic order confirmation
+* Order status management
+
+The current system simply builds a WhatsApp order message.
+
+---
+
+# 🎨 Styling
+
+The main stylesheet is:
+
+```text
 css/style.css
+```
 
-The design uses CSS variables for the primary colour palette:
+The site's primary design variables are defined inside `:root`:
 
+```css
 :root {
   --red: #C0392B;
   --red-dark: #96281B;
@@ -140,123 +360,364 @@ The design uses CSS variables for the primary colour palette:
   --dark-2: #2C1503;
   --text: #3D1F00;
   --text-light: #7A5230;
+  --border: rgba(192,57,43,0.15);
   --gold: #C9A84C;
 }
+```
 
-Changing these variables allows the site's overall colour scheme to be updated from one location.
+Changing these variables allows the overall colour scheme to be modified from one location.
 
-Fonts
+---
 
-The website currently uses Google Fonts:
+# 🔤 Typography
 
-Playfair Display
+The website uses two Google Fonts:
 
-Nunito
+* **Playfair Display** — headings and decorative typography
+* **Nunito** — body text and interface elements
 
-These are loaded from fonts.googleapis.com in index.html.
+They are loaded in `index.html`:
 
-An internet connection is therefore required for the fonts to load from Google Fonts.
+```html
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600&display=swap"
+  rel="stylesheet"
+>
+```
 
-External Links to Update
+An internet connection is required for the Google Fonts to load.
 
-Before deployment, replace placeholder links where necessary:
+---
 
-WhatsApp number in js/main.js
+# 🔗 Production Links
 
-Full Menu PDF link
+Before deploying the website, replace placeholder links such as:
 
-Restaurant location link
+```html
+href="#"
+```
 
-Any other href="#" placeholders
+with the appropriate production URLs.
 
-Restaurant email address if different
+Important links to configure include:
 
-Parent company URL if the company website changes
+* WhatsApp ordering number
+* Full menu PDF
+* Restaurant location
+* Google Maps location
+* Restaurant email
+* Parent-company website
+* Social-media profiles
 
-Recommended Production Checklist
+You can search the repository for:
 
-Replace the placeholder WhatsApp number.
+```text
+href="#"
+```
 
-Add the real restaurant location/Google Maps link.
+to identify remaining placeholder links.
 
-Add the final downloadable menu PDF.
+---
 
-Verify all menu names, descriptions, and prices.
+# 🌐 Deployment
 
-Confirm opening hours.
+Because this project is a static website, it can be deployed without a backend server.
 
-Confirm restaurant email address.
+Supported deployment options include:
 
-Test every navigation link.
+* GitHub Pages
+* Netlify
+* Vercel
+* Cloudflare Pages
+* cPanel/shared hosting
+* Apache
+* Nginx
+* Any static web server
 
-Test WhatsApp ordering on desktop and mobile.
+---
 
-Test the website on Chrome, Edge, Firefox, Safari, Android, and iOS.
+## GitHub Pages
 
-Add real restaurant photography if available.
+To deploy using GitHub Pages:
 
-Add a favicon.
+1. Push the project to GitHub.
+2. Open the repository.
+3. Go to **Settings**.
+4. Select **Pages**.
+5. Under **Build and deployment**, select the desired branch.
+6. Select the root directory if prompted.
+7. Save the configuration.
+8. GitHub will generate the website URL.
 
-Add appropriate SEO metadata.
+The project does not require a build command.
 
-Add Open Graph metadata for social-media sharing.
+---
 
-Connect the site to the production domain.
+# 📋 Production Checklist
 
-Enable HTTPS on the production domain.
+Before launching the website:
 
-Technology
+### Business Information
 
-This project uses:
+* [ ] Verify restaurant name.
+* [ ] Verify restaurant description.
+* [ ] Verify parent-company information.
+* [ ] Verify opening hours.
+* [ ] Verify restaurant email address.
+* [ ] Add the correct restaurant location.
 
-HTML5
+### Menu
 
-CSS3
+* [ ] Verify all menu categories.
+* [ ] Verify menu item names.
+* [ ] Verify descriptions.
+* [ ] Verify prices.
+* [ ] Confirm that prices are current.
+* [ ] Add the final downloadable menu PDF.
 
-Vanilla JavaScript
+### Ordering
 
-Google Fonts
+* [ ] Replace the placeholder WhatsApp number.
+* [ ] Test adding menu items.
+* [ ] Test WhatsApp order generation.
+* [ ] Test WhatsApp ordering on mobile.
+* [ ] Test WhatsApp ordering on desktop.
+* [ ] Confirm the generated order message is correct.
 
-WhatsApp Click-to-Chat
+### Links
 
-No frontend framework or backend is currently required.
+* [ ] Replace all `href="#"` placeholders.
+* [ ] Add Google Maps location.
+* [ ] Verify parent-company links.
+* [ ] Verify email links.
+* [ ] Add social-media links if applicable.
 
-Browser Support
+### Website
 
-The site is designed for modern browsers that support:
+* [ ] Add restaurant photography.
+* [ ] Add a favicon.
+* [ ] Add SEO metadata.
+* [ ] Add Open Graph metadata.
+* [ ] Test responsive layouts.
+* [ ] Test navigation.
+* [ ] Test all menu tabs.
+* [ ] Test all buttons.
+* [ ] Test major browsers.
+* [ ] Enable HTTPS.
+* [ ] Connect the production domain.
 
-CSS Grid
+---
 
-CSS Flexbox
+# 🧪 Testing
 
-CSS Custom Properties
+The project currently does not use an automated testing framework.
 
-IntersectionObserver
+Manual testing should be performed before every production release.
 
-ES6 JavaScript
+## Navigation
 
-Important Notes
+Test:
 
-The current ordering system is intentionally lightweight. It does not provide:
+* Menu
+* About
+* Hours
+* Find Us
+* Order Now
+* WhatsApp buttons
 
-Online payment processing
+## Menu
 
-Server-side order storage
+Verify:
 
-Customer accounts
+* All categories load.
+* Category tabs switch correctly.
+* Menu items render correctly.
+* Prices display correctly.
+* Add buttons work.
+* Toast notification appears.
+* WhatsApp links update correctly.
 
-Inventory management
+## Responsive Design
 
-Delivery tracking
+Test the website on:
 
-Order history
+* Desktop
+* Laptop
+* Tablet
+* Mobile portrait
+* Mobile landscape
 
-Restaurant administration dashboard
+## Browser Testing
 
-For a production restaurant ordering platform, these features could be added later through a backend/API and database.
+Recommended browsers:
 
-License
+* Google Chrome
+* Microsoft Edge
+* Mozilla Firefox
+* Safari
+* Android browsers
+* iOS Safari
 
-This project is proprietary to The Real Pot Café and its parent company, Opeyemi Ononuga General Enterprises, unless otherwise stated.
+---
 
-Do not redistribute, resell, or reuse the branding, restaurant content, or business information without permission.
+# ♿ Accessibility
+
+When expanding the website, maintain accessibility best practices.
+
+Recommended practices include:
+
+* Use semantic HTML.
+* Maintain sufficient colour contrast.
+* Ensure buttons and links are keyboard accessible.
+* Provide descriptive `alt` text for images.
+* Avoid communicating important information using colour alone.
+* Maintain visible focus states.
+* Use meaningful link text.
+* Test keyboard navigation.
+* Test with screen readers where practical.
+
+---
+
+# 🔍 SEO
+
+The current project contains basic HTML metadata, but the production website should be enhanced with:
+
+* Meta description
+* Canonical URL
+* Open Graph metadata
+* Social sharing metadata
+* Restaurant structured data
+* Location information
+* Relevant Nigerian cuisine keywords
+
+A future implementation could use `schema.org` structured data for the restaurant.
+
+For example, the site could eventually include structured data using the `Restaurant` schema.
+
+---
+
+# 🔒 Security Considerations
+
+The current website is a static frontend and does not contain a backend or database.
+
+For production:
+
+* Do not place API keys in `main.js`.
+* Do not store payment credentials in frontend JavaScript.
+* Use HTTPS.
+* Avoid collecting unnecessary customer information.
+* Validate all data server-side if a backend is introduced.
+* Secure any future APIs.
+* Keep third-party dependencies updated if dependencies are introduced.
+
+---
+
+# 🗺️ Roadmap
+
+Potential future improvements include:
+
+* [ ] Shopping cart sidebar
+* [ ] Item quantity controls
+* [ ] Remove items from order
+* [ ] Automatic order total
+* [ ] Delivery/pickup selection
+* [ ] Customer checkout form
+* [ ] Online payment integration
+* [ ] Database-backed ordering
+* [ ] Restaurant administration dashboard
+* [ ] Inventory management
+* [ ] Order status tracking
+* [ ] Delivery tracking
+* [ ] Customer order history
+* [ ] Restaurant image gallery
+* [ ] Customer reviews
+* [ ] Google Maps integration
+* [ ] Restaurant schema markup
+* [ ] Improved SEO
+* [ ] Progressive Web App support
+
+---
+
+# 🤝 Contributing
+
+If this repository is made public and contributions are accepted:
+
+### 1. Fork the repository
+
+```bash
+git clone https://github.com/YOUR-USERNAME/the-real-pot-cafe.git
+```
+
+### 2. Create a feature branch
+
+```bash
+git checkout -b feature/your-feature
+```
+
+### 3. Make your changes
+
+Update the relevant HTML, CSS, or JavaScript files.
+
+### 4. Test your changes
+
+Ensure that:
+
+* The website loads correctly.
+* Existing functionality still works.
+* Responsive layouts remain intact.
+* WhatsApp ordering still works.
+* No placeholder links were accidentally introduced.
+
+### 5. Commit your changes
+
+```bash
+git add .
+git commit -m "Add your feature"
+```
+
+### 6. Push your branch
+
+```bash
+git push origin feature/your-feature
+```
+
+### 7. Open a Pull Request
+
+Provide a clear description of:
+
+* What changed
+* Why it changed
+* How it was tested
+
+For a private business repository, contribution access should be limited to authorized collaborators.
+
+---
+
+# 📄 License
+
+This project and its restaurant branding/content are proprietary to **The Real Pot Café** and **Opeyemi Ononuga General Enterprises**, unless a separate license is explicitly provided.
+
+The following should not be redistributed, resold, or commercially reused without authorization:
+
+* Restaurant branding
+* Logo and visual identity
+* Menu content
+* Business information
+* Restaurant images
+* Website content
+* Proprietary business information
+
+---
+
+# 👤 Project Information
+
+**The Real Pot Café**
+*Authentic Nigerian Cuisine*
+
+**Parent Company:** Opeyemi Ononuga General Enterprises
+
+---
+
+<p align="center">
+  Made for The Real Pot Café 🇳🇬
+</p>
