@@ -4,6 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Real Pot Café — Authentic Nigerian Cuisine</title>
+  <meta name="description" content="The Real Pot Café — Freshly made, home-style authentic Nigerian cuisine. Order online or via WhatsApp.">
+  <meta name="theme-color" content="#8B4513">
+
+  <!-- ===================== FAVICON & ICONS ===================== -->
+  <!-- Standard favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <!-- SVG favicon (modern browsers) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <!-- PNG favicon (96x96) -->
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
+  <!-- Apple Touch Icon (iOS home screen) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <!-- PWA Web Manifest -->
+  <link rel="manifest" href="assets/site.webmanifest">
+
+  <!-- ===================== OPEN GRAPH (social sharing) ===================== -->
+  <meta property="og:title" content="The Real Pot Café">
+  <meta property="og:description" content="Authentic Nigerian cuisine — fresh daily. Order online or via WhatsApp.">
+  <meta property="og:image" content="images/logo.png">
+  <meta property="og:type" content="restaurant">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
@@ -16,8 +36,9 @@
   <!-- ===================== NAVIGATION ===================== -->
   <nav>
     <div class="nav-logo">
-      <h1>The Real Pot Café</h1>
-      <span>Authentic Nigerian Cuisine</span>
+      <a href="#" aria-label="The Real Pot Café — Home">
+        <img src="assets/logo.png" alt="The Real Pot Café" class="nav-logo-img">
+      </a>
     </div>
     <ul class="nav-links">
       <li><a href="#menu">Menu</a></li>
@@ -45,6 +66,14 @@
         <div class="hero-stats-item"><h3>Daily</h3><p>Fresh Cooked</p></div>
         <div class="hero-stats-item"><h3>Fast</h3><p>Delivery</p></div>
       </div>
+    </div>
+    <!-- Hero right: large logo -->
+    <div class="hero-visual">
+      <img
+        src="assets/favicon.svg"
+        alt="The Real Pot Café"
+        class="hero-logo-large"
+      >
     </div>
   </section>
 
@@ -101,11 +130,11 @@
       <p>The Real Pot Café was born from a simple belief: Nigerian food, made properly, is world-class. We cook every dish fresh daily — no shortcuts, no compromises. Just real ingredients, real techniques, and real flavour.</p>
       <p style="margin-top:1rem">
         We are proudly a subsidiary of
-        <a href="https://opeyemiononugaenterprises.com">Opeyemi Ononuga General Enterprises</a>,
+        <a href="https://www.opeyemiononugageneralenterprises.com">Opeyemi Ononuga General Enterprises</a>,
         a Nigerian holding company committed to building businesses that serve communities.
       </p>
       <div style="margin-top:2rem">
-        <a href="https://opeyemiononugaenterprises.com"
+        <a href="https://www.opeyemiononugageneralenterprises.com"
            style="color:var(--gold);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase">
           About the parent company →
         </a>
@@ -175,10 +204,13 @@
         <h3>The Real Pot Café</h3>
         <p>Serving authentic, home-style Nigerian cuisine. Fresh daily. No shortcuts.</p>
         <p style="margin-top:1rem">
-          <a href="https://opeyemiononugaenterprises.com" class="parent-link">
+          <a href="https://www.opeyemiononugageneralenterprises.com" class="parent-link">
             ⬡ Opeyemi Ononuga General Enterprises →
           </a>
         </p>
+		<p>
+			<iframe src="https://www.google.com/maps/embed?pb=!4v1787048465285!6m8!1m7!1su8myYA1eUEScBdkaCmhXCQ!2m2!1d6.827264852807441!2d3.920036167631046!3f299.3151!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+		</p>
       </div>
       <div>
         <h3>Quick Links</h3>
@@ -202,7 +234,7 @@
       <p>© 2025 The Real Pot Café. All Rights Reserved.</p>
       <p>
         A subsidiary of
-        <a href="https://opeyemiononugaenterprises.com" class="parent-link">
+        <a href="https://www.opeyemiononugageneralenterprises.com" class="parent-link">
           Opeyemi Ononuga General Enterprises
         </a>
       </p>
@@ -215,5 +247,10 @@
   <!-- Main JavaScript -->
   <script src="js/main.js"></script>
 
+  <!-- ===================== VERCEL WEB ANALYTICS =====================
+       For plain HTML sites, Vercel injects analytics via this script.
+       This only activates when deployed on Vercel — does nothing locally.
+  ====================================================================== -->
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

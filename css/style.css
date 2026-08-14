@@ -4,17 +4,18 @@
    ============================================ */
 
 /* --- CSS VARIABLES --- */
+/* Colours sourced directly from The Real Pot Café logo */
 :root {
-  --red: #C0392B;
-  --red-dark: #96281B;
-  --orange: #E67E22;
-  --cream: #FDF6EC;
-  --dark: #1A0A00;
-  --dark-2: #2C1503;
-  --text: #3D1F00;
-  --text-light: #7A5230;
-  --border: rgba(192,57,43,0.15);
-  --gold: #C9A84C;
+  --red: #8B4513;           /* logo pot brown — primary brand colour */
+  --red-dark: #5C2D0A;      /* darker brown for hovers */
+  --orange: #C8860A;        /* logo steam gold/orange */
+  --cream: #FAF0E0;         /* logo background cream */
+  --dark: #2B1200;          /* near-black brown for hero/footer */
+  --dark-2: #3E1C00;        /* dark brown text colour from logo */
+  --text: #3E1C00;          /* primary text — logo dark brown */
+  --text-light: #8B6347;    /* muted text */
+  --border: rgba(139,69,19,0.15);
+  --gold: #C8860A;          /* steam colour — used for accents */
 }
 
 /* --- RESET & BASE --- */
@@ -43,17 +44,17 @@ nav {
   box-shadow: 0 2px 20px rgba(0,0,0,0.06);
 }
 
-.nav-logo h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  color: var(--red);
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-.nav-logo span {
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-light);
+.nav-logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .nav-links {
@@ -97,7 +98,8 @@ nav {
 .hero {
   min-height: 100vh;
   background: linear-gradient(135deg, var(--dark) 0%, #3D1000 50%, #5C2000 100%);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   padding: 7rem 3rem 4rem;
   position: relative;
@@ -110,23 +112,46 @@ nav {
   opacity: 0.04;
   background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
   background-size: 20px 20px;
+  pointer-events: none;
 }
 
 .hero-glow {
   position: absolute;
-  right: -10%;
+  right: 10%;
   top: 50%;
   transform: translateY(-50%);
-  width: 600px;
-  height: 600px;
+  width: clamp(300px, 45vw, 650px);
+  height: clamp(300px, 45vw, 650px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(192,57,43,0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200,134,10,0.18) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 650px;
+  max-width: 600px;
+}
+
+/* --- HERO RIGHT VISUAL --- */
+.hero-visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-logo-large {
+  width: clamp(260px, 38vw, 540px);
+  height: clamp(260px, 38vw, 540px);
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 60px rgba(200,134,10,0.35))
+    drop-shadow(0 0 120px rgba(139,69,19,0.25));
+  animation: heroFloat 5s ease-in-out infinite;
+  user-select: none;
 }
 
 .hero-badge {
@@ -268,6 +293,12 @@ nav {
 .marquee-inner span::before {
   content: '✦';
   margin-right: 2rem;
+}
+
+@keyframes heroFloat {
+  0%   { transform: translateY(0px);    }
+  50%  { transform: translateY(-18px);  }
+  100% { transform: translateY(0px);    }
 }
 
 @keyframes marquee {
@@ -412,7 +443,7 @@ h2 {
 /* --- CART TOAST --- */
 .cart-toast {
   position: fixed;
-  bottom: 2rem;
+  bottom: 6.5rem;
   right: 2rem;
   background: var(--dark);
   color: #fff;
@@ -669,7 +700,30 @@ footer ul a:hover {
   }
 
   .hero {
+    grid-template-columns: 1fr;
     padding: 6rem 1.5rem 3rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    padding: 1rem 0 0;
+  }
+
+  .hero-logo-large {
+    width: clamp(180px, 65vw, 300px);
+    height: clamp(180px, 65vw, 300px);
   }
 
   .menu-section,
