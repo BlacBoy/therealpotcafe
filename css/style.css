@@ -625,6 +625,214 @@ h2 {
   position: relative;
 }
 
+/* --- HERO LOGO ALTERNATION --- */
+.hero-logo-hidden {
+  display: none;
+}
+
+.hero-logo-large {
+  width: clamp(260px, 38vw, 540px);
+  height: clamp(260px, 38vw, 540px);
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 60px rgba(200,134,10,0.35))
+    drop-shadow(0 0 120px rgba(139,69,19,0.25));
+  animation: heroFloat 5s ease-in-out infinite;
+  user-select: none;
+  transition: opacity 0.6s ease;
+}
+
+/* logo_v2 is a photo — use cover instead of contain, round it */
+#hero-logo-b {
+  object-fit: cover;
+  border-radius: 50%;
+  filter:
+    drop-shadow(0 0 60px rgba(200,134,10,0.35))
+    drop-shadow(0 0 120px rgba(139,69,19,0.25));
+}
+
+/* --- NAV LOGO --- */
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* --- MENU DOWNLOAD BUTTONS --- */
+.menu-downloads {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.menu-dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--red);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background 0.3s;
+  border: 2px solid var(--red);
+}
+
+.menu-dl-btn:hover {
+  background: var(--red-dark);
+  border-color: var(--red-dark);
+}
+
+.menu-dl-btn--drinks {
+  background: transparent;
+  color: var(--red);
+}
+
+.menu-dl-btn--drinks:hover {
+  background: var(--red);
+  color: #fff;
+}
+
+/* --- MENU FOOD PHOTO STRIP --- */
+.menu-photo-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.menu-photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  aspect-ratio: 4/3;
+}
+
+.menu-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.menu-photo-card:hover img {
+  transform: scale(1.04);
+}
+
+.menu-photo-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(43,18,0,0.85), transparent);
+  color: #fff;
+  padding: 1.5rem 1rem 0.75rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* --- DEAL POPUP --- */
+.deal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.deal-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.deal-modal {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  background: var(--cream);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  overflow: hidden;
+  transform: translateY(30px) scale(0.97);
+  transition: transform 0.4s ease;
+}
+
+.deal-overlay.show .deal-modal {
+  transform: translateY(0) scale(1);
+}
+
+.deal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  line-height: 1;
+  transition: background 0.2s;
+}
+
+.deal-close:hover {
+  background: var(--red);
+}
+
+.deal-img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.deal-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem 1.5rem;
+  background: var(--dark);
+}
+
+.deal-skip {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.deal-skip:hover {
+  color: #fff;
+}
+
 /* --- MAP / FIND US SECTION --- */
 .map-section {
   padding: 6rem 3rem;
@@ -825,6 +1033,19 @@ footer ul a:hover {
   .hero-logo-large {
     width: clamp(180px, 65vw, 300px);
     height: clamp(180px, 65vw, 300px);
+  }
+
+  .menu-photo-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-downloads {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deal-modal {
+    max-width: 95vw;
   }
 
   .map-section {

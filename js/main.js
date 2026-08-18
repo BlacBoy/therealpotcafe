@@ -290,3 +290,77 @@ document.addEventListener('DOMContentLoaded', () => {
   initFloatingWhatsApp(); // floating green button bottom-right
   updateWhatsAppLinks();  // set default WhatsApp link on load
 });
+
+/* ============================================
+   HERO LOGO ALTERNATION
+   Swaps between favicon.svg and logo_v2.jpeg in the hero every 45 seconds
+   ============================================ */
+function initLogoAlternation() {
+  const logoA = document.getElementById('hero-logo-a'); // favicon.svg
+  const logoB = document.getElementById('hero-logo-b'); // logo_v2.jpeg
+  if (!logoA || !logoB) return;
+
+  let showingA = true;
+
+  setInterval(() => {
+    if (showingA) {
+      logoA.style.opacity = '0';
+      setTimeout(() => {
+        logoA.style.display = 'none';
+        logoB.classList.remove('hero-logo-hidden');
+        logoB.style.display = 'block';
+        setTimeout(() => { logoB.style.opacity = '1'; }, 20);
+      }, 600);
+    } else {
+      logoB.style.opacity = '0';
+      setTimeout(() => {
+        logoB.style.display = 'none';
+        logoA.style.display = 'block';
+        setTimeout(() => { logoA.style.opacity = '1'; }, 20);
+      }, 600);
+    }
+    showingA = !showingA;
+  }, 45000); // every 45 seconds
+}
+
+/* ============================================
+   DEAL POPUP
+   Shows after a random delay between 8–20 seconds.
+   Only shows once per session (won't re-appear on refresh).
+   ============================================ */
+function initDealPopup() {
+  // Don't show again in the same browser session
+  if (sessionStorage.getItem('dealSeen')) return;
+
+  const overlay = document.getElementById('deal-overlay');
+  const closeBtn = document.getElementById('deal-close');
+  const skipBtn  = document.getElementById('deal-skip');
+  const orderBtn = document.getElementById('deal-order-btn');
+  if (!overlay) return;
+
+  // Random delay: 8 to 20 seconds
+  const delay = Math.floor(Math.random() * 12000) + 8000;
+
+  setTimeout(() => {
+    overlay.classList.add('show');
+    sessionStorage.setItem('dealSeen', 'true');
+  }, delay);
+
+  function closeDeal() {
+    overlay.classList.remove('show');
+  }
+
+  closeBtn.addEventListener('click', closeDeal);
+  skipBtn.addEventListener('click', closeDeal);
+  orderBtn.addEventListener('click', closeDeal);
+
+  // Close if clicking outside the modal
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeDeal();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDeal();
+  });
+}

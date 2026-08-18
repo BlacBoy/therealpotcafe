@@ -59,7 +59,8 @@
       </div>
     </div>
     <div class="hero-visual">
-      <img src="assets/favicon.svg" alt="The Real Pot Café" class="hero-logo-large">
+      <img src="assets/favicon.svg"   alt="The Real Pot Café" class="hero-logo-large" id="hero-logo-a">
+      <img src="assets/logo_v2.svg"  alt="The Real Pot Café" class="hero-logo-large hero-logo-hidden" id="hero-logo-b">
     </div>
   </section>
 
@@ -82,10 +83,31 @@
         <div class="section-tag">What We Serve</div>
         <h2>Our Menu</h2>
       </div>
-      <a href="#">Download Full Menu PDF →</a>
+      <!-- Download full menu — two image buttons -->
+      <div class="menu-downloads">
+        <a href="assets/menu_food.png" download="RealPotCafe_FoodMenu.png" class="menu-dl-btn">
+          🍽 Download Food Menu
+        </a>
+        <a href="assets/menu_drinks.png" download="RealPotCafe_DrinksMenu.png" class="menu-dl-btn menu-dl-btn--drinks">
+          🥤 Download Drinks Menu
+        </a>
+      </div>
     </div>
     <div class="menu-tabs"></div>
     <div class="menu-grid" id="menu-grid"></div>
+
+    <!-- Food photo strip -->
+    <div class="menu-photo-strip">
+      <div class="menu-photo-card">
+        <img src="assets/food_1.png" alt="Fresh Nigerian meal at The Real Pot Café" loading="lazy">
+        <div class="menu-photo-label">Fresh &amp; Hot Daily</div>
+      </div>
+      <div class="menu-photo-card">
+        <img src="assets/food_2.jpeg" alt="Jollof rice and chicken at The Real Pot Café" loading="lazy">
+        <div class="menu-photo-label">From Our Pot to Your Heart</div>
+      </div>
+    </div>
+
     <div class="menu-view-all">
       <a href="#" class="btn-whatsapp whatsapp-link" style="display:inline-flex">
         📲 Send Full Order via WhatsApp
@@ -249,6 +271,18 @@
 
   <!-- Cart Toast Notification -->
   <div class="cart-toast" id="cart-toast"></div>
+
+  <!-- ===================== DEAL POPUP ===================== -->
+  <div class="deal-overlay" id="deal-overlay" role="dialog" aria-label="Special Deal" aria-modal="true">
+    <div class="deal-modal">
+      <button class="deal-close" id="deal-close" aria-label="Close deal">&times;</button>
+      <img src="assets/deal.png" alt="Special Deal — The Real Pot Café" class="deal-img">
+      <div class="deal-actions">
+        <a href="#menu" class="btn-order" id="deal-order-btn">🍽 Order This Deal</a>
+        <button class="deal-skip" id="deal-skip">Maybe later</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Main JavaScript -->
   <script src="js/main.js"></script>
